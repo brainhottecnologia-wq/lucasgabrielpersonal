@@ -3,7 +3,7 @@ version: '3.8'
 services:
   lucasgabriel:
     image: brainhot/lucasgabrielpersonal:latest
-    container_name: lucasgabriel
+    container_name: lucas
     restart: unless-stopped
     ports:
       - "3084:80"
