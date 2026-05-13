@@ -6,4 +6,4 @@ services:
     container_name: lucasgabriel
     restart: unless-stopped
     ports:
-      - "3083:80"
+      - "3084:80"
