@@ -289,7 +289,7 @@
     position: relative;
     overflow: hidden;
     transition: all 0.4s ease;
-    cursor: default;
+    cursor: pointer;
   }
 
   .card::before {
@@ -380,6 +380,45 @@
   }
 
   .card:hover .card-cta { gap: 14px; }
+
+  /* ── CARD WPP BUTTON (shown on click) ── */
+  .card-wpp {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+    transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  }
+
+  .card.card-active .card-wpp {
+    max-height: 80px;
+    opacity: 1;
+    margin-top: 20px;
+  }
+
+  .btn-wpp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--orange);
+    color: #fff;
+    padding: 12px 28px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    transition: all 0.3s ease;
+  }
+
+  .btn-wpp:hover {
+    background: #ff5a10;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(223,74,3,0.45);
+  }
 
   /* ── ABOUT ── */
   .about {
@@ -603,6 +642,8 @@
 
     section { padding: 70px 28px; }
     .services-header { flex-direction: column; align-items: flex-start; }
+    .services-grid { grid-template-columns: 1fr; }
+    .card-featured { grid-column: 1 !important; }
 
     .about {
       grid-template-columns: 1fr;

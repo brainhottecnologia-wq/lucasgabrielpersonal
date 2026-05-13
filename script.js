@@ -56,6 +56,28 @@
   style.textContent = '.card.visible, .stat.visible { opacity: 1 !important; transform: translateY(0) !important; }';
   document.head.appendChild(style);
 
+  // WhatsApp card click — show button and set message per card
+  const WPP_NUMBER = '5561993999883';
+  document.querySelectorAll('.services .card').forEach(card => {
+    card.addEventListener('click', function(e) {
+      if (e.target.closest('.btn-wpp')) return;
+      const isActive = this.classList.contains('card-active');
+      document.querySelectorAll('.services .card').forEach(c => c.classList.remove('card-active'));
+      if (!isActive) {
+        this.classList.add('card-active');
+        const msg = this.dataset.wppMsg || 'Olá Lucas! Gostaria de saber mais sobre seus serviços.';
+        const link = this.querySelector('.btn-wpp');
+        if (link) link.href = 'https://wa.me/' + WPP_NUMBER + '?text=' + encodeURIComponent(msg);
+      }
+    });
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.services .card')) {
+      document.querySelectorAll('.services .card').forEach(c => c.classList.remove('card-active'));
+    }
+  });
+
   // Nav shrink on scroll
   window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
