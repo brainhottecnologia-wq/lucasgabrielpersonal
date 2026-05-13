@@ -6,4 +6,4 @@ services:
     container_name: lucas
     restart: unless-stopped
     ports:
-      - "3084:80"
+      - "3083:80"
