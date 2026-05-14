@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lucasgabrielpt.com.br/sitemap.xml
+Sitemap: https://lucasgabrielpersonal.brainhot.com.br/sitemap.xml
